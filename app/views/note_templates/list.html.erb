@@ -1,0 +1,66 @@
+<h1>
+  Note list
+</h1>
+
+<a href="/new_note_form">
+  Add a new note
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Notes
+    </th>
+
+    <th>
+      Inputs
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @notes.each do |note| %>
+  <tr>
+    <td>
+      <%= note.id %>
+    </td>
+
+    <td>
+      <%= note.notes %>
+    </td>
+
+    <td>
+      <%= note.inputs_id %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(note.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(note.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/notes/<%= note.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,61 @@
+<h1>
+  Status #<%= @status.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/statuses">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_status_form/<%= @status.id %>">
+      Edit status
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_status/<%= @status.id %>">
+      Delete status
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Area of interest
+  </dt>
+  <dd>
+    <%= @status.area_of_interest %>
+  </dd>
+
+  <dt>
+    Status
+  </dt>
+  <dd>
+    <%= @status.status %>
+  </dd>
+
+  <dt>
+    Action plan
+  </dt>
+  <dd>
+    <%= @status.action_plan %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@status.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@status.updated_at) %> ago
+  </dd>
+</dl>
+

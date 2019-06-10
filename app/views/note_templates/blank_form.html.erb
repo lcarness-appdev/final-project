@@ -1,0 +1,35 @@
+<h1>
+  Add a new note
+</h1>
+
+<hr>
+
+<%= render("note_templates/validation_failures.html.erb") %>
+
+<form action="/insert_note_record" method="post">
+  <div>
+    <label for="notes">
+      Notes
+    </label>
+
+    <input type="text" id="notes" name="notes" value="<%= @note.notes %>">
+  </div>
+
+  <div>
+    <label for="inputs_id">
+      Inputs
+    </label>
+
+    <input type="text" id="inputs_id" name="inputs_id" value="<%= @note.inputs_id %>">
+  </div>
+
+  <button>
+    Create note
+  </button>
+</form>
+
+<hr>
+
+<a href="/notes">
+  Go back
+</a>

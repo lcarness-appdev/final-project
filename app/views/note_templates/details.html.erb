@@ -1,0 +1,54 @@
+<h1>
+  Note #<%= @note.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/notes">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_note_form/<%= @note.id %>">
+      Edit note
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_note/<%= @note.id %>">
+      Delete note
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Notes
+  </dt>
+  <dd>
+    <%= @note.notes %>
+  </dd>
+
+  <dt>
+    Inputs
+  </dt>
+  <dd>
+    <%= @note.inputs_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@note.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@note.updated_at) %> ago
+  </dd>
+</dl>
+

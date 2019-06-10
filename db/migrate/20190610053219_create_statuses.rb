@@ -1,0 +1,11 @@
+class CreateStatuses < ActiveRecord::Migration[5.1]
+  def change
+    create_table :statuses do |t|
+      t.string :area_of_interest
+      t.text :status
+      t.text :action_plan
+
+      t.timestamps
+    end
+  end
+end

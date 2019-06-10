@@ -1,0 +1,278 @@
+<h1>
+  Input #<%= @input.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/inputs">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_input_form/<%= @input.id %>">
+      Edit input
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_input/<%= @input.id %>">
+      Delete input
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Operating income
+  </dt>
+  <dd>
+    <%= @input.operating_income %>
+  </dd>
+
+  <dt>
+    Revenues
+  </dt>
+  <dd>
+    <%= @input.revenues %>
+  </dd>
+
+  <dt>
+    Invested capital
+  </dt>
+  <dd>
+    <%= @input.invested_capital %>
+  </dd>
+
+  <dt>
+    Total assets
+  </dt>
+  <dd>
+    <%= @input.total_assets %>
+  </dd>
+
+  <dt>
+    Paid in capital
+  </dt>
+  <dd>
+    <%= @input.paid_in_capital %>
+  </dd>
+
+  <dt>
+    Non performing loans to customers
+  </dt>
+  <dd>
+    <%= @input.non_performing_loans_to_customers %>
+  </dd>
+
+  <dt>
+    Long term debt
+  </dt>
+  <dd>
+    <%= @input.long_term_debt %>
+  </dd>
+
+  <dt>
+    Perished inventory
+  </dt>
+  <dd>
+    <%= @input.perished_inventory %>
+  </dd>
+
+  <dt>
+    Customer satisfaction
+  </dt>
+  <dd>
+    <%= @input.customer_satisfaction %>
+  </dd>
+
+  <dt>
+    Customers acquired last month
+  </dt>
+  <dd>
+    <%= @input.customers_acquired_last_month %>
+  </dd>
+
+  <dt>
+    Total customers
+  </dt>
+  <dd>
+    <%= @input.total_customers %>
+  </dd>
+
+  <dt>
+    Number promotion activities last month
+  </dt>
+  <dd>
+    <%= @input.number_promotion_activities_last_month %>
+  </dd>
+
+  <dt>
+    Number promotion activities next month
+  </dt>
+  <dd>
+    <%= @input.number_promotion_activities_next_month %>
+  </dd>
+
+  <dt>
+    Utilities expenses
+  </dt>
+  <dd>
+    <%= @input.utilities_expenses %>
+  </dd>
+
+  <dt>
+    Rent
+  </dt>
+  <dd>
+    <%= @input.rent %>
+  </dd>
+
+  <dt>
+    Interest expenses
+  </dt>
+  <dd>
+    <%= @input.interest_expenses %>
+  </dd>
+
+  <dt>
+    Taxes
+  </dt>
+  <dd>
+    <%= @input.taxes %>
+  </dd>
+
+  <dt>
+    Consulting expenses
+  </dt>
+  <dd>
+    <%= @input.consulting_expenses %>
+  </dd>
+
+  <dt>
+    Other indirect costs
+  </dt>
+  <dd>
+    <%= @input.other_indirect_costs %>
+  </dd>
+
+  <dt>
+    Number of employees
+  </dt>
+  <dd>
+    <%= @input.number_of_employees %>
+  </dd>
+
+  <dt>
+    Yearly working days
+  </dt>
+  <dd>
+    <%= @input.yearly_working_days %>
+  </dd>
+
+  <dt>
+    Monthly contribution margin
+  </dt>
+  <dd>
+    <%= @input.monthly_contribution_margin %>
+  </dd>
+
+  <dt>
+    Last month deferred revenues
+  </dt>
+  <dd>
+    <%= @input.last_month_deferred_revenues %>
+  </dd>
+
+  <dt>
+    Last month total revenues
+  </dt>
+  <dd>
+    <%= @input.last_month_total_revenues %>
+  </dd>
+
+  <dt>
+    Total deliveries
+  </dt>
+  <dd>
+    <%= @input.total_deliveries %>
+  </dd>
+
+  <dt>
+    Late deliveries
+  </dt>
+  <dd>
+    <%= @input.late_deliveries %>
+  </dd>
+
+  <dt>
+    Non compliant deliveries
+  </dt>
+  <dd>
+    <%= @input.non_compliant_deliveries %>
+  </dd>
+
+  <dt>
+    Monthly employee suggestions received
+  </dt>
+  <dd>
+    <%= @input.monthly_employee_suggestions_received %>
+  </dd>
+
+  <dt>
+    Monthly revenues new products
+  </dt>
+  <dd>
+    <%= @input.monthly_revenues_new_products %>
+  </dd>
+
+  <dt>
+    Monthly education hours manager
+  </dt>
+  <dd>
+    <%= @input.monthly_education_hours_manager %>
+  </dd>
+
+  <dt>
+    Monthly education hours all employees
+  </dt>
+  <dd>
+    <%= @input.monthly_education_hours_all_employees %>
+  </dd>
+
+  <dt>
+    Reference period
+  </dt>
+  <dd>
+    <%= @input.reference_period %>
+  </dd>
+
+  <dt>
+    Date of entry
+  </dt>
+  <dd>
+    <%= @input.date_of_entry %>
+  </dd>
+
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @input.user_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@input.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@input.updated_at) %> ago
+  </dd>
+</dl>
+

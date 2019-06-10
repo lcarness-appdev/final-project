@@ -1,0 +1,43 @@
+<h1>
+  Edit status #<%= @status.id %>
+</h1>
+
+<hr>
+
+<%= render("status_templates/validation_failures.html.erb") %>
+
+<form action="/update_status_record/<%= @status.id %>" method="post">
+  <div>
+    <label for="area_of_interest">
+      Area of interest
+    </label>
+
+    <input type="text" id="area_of_interest" name="area_of_interest" value="<%= @status.area_of_interest %>">
+  </div>
+
+  <div>
+    <label for="status">
+      Status
+    </label>
+
+    <textarea id="status" name="status" rows="3"><%= @status.status %></textarea>
+  </div>
+
+  <div>
+    <label for="action_plan">
+      Action plan
+    </label>
+
+    <textarea id="action_plan" name="action_plan" rows="3"><%= @status.action_plan %></textarea>
+  </div>
+
+  <button>
+    Update status
+  </button>
+</form>
+
+<hr>
+
+<a href="/statuses">
+  Go back
+</a>

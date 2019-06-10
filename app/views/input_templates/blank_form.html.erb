@@ -1,0 +1,291 @@
+<h1>
+  Add a new input
+</h1>
+
+<hr>
+
+<%= render("input_templates/validation_failures.html.erb") %>
+
+<form action="/insert_input_record" method="post">
+  <div>
+    <label for="operating_income">
+      Operating income
+    </label>
+
+    <input type="text" id="operating_income" name="operating_income" value="<%= @input.operating_income %>">
+  </div>
+
+  <div>
+    <label for="revenues">
+      Revenues
+    </label>
+
+    <input type="text" id="revenues" name="revenues" value="<%= @input.revenues %>">
+  </div>
+
+  <div>
+    <label for="invested_capital">
+      Invested capital
+    </label>
+
+    <input type="text" id="invested_capital" name="invested_capital" value="<%= @input.invested_capital %>">
+  </div>
+
+  <div>
+    <label for="total_assets">
+      Total assets
+    </label>
+
+    <input type="text" id="total_assets" name="total_assets" value="<%= @input.total_assets %>">
+  </div>
+
+  <div>
+    <label for="paid_in_capital">
+      Paid in capital
+    </label>
+
+    <input type="text" id="paid_in_capital" name="paid_in_capital" value="<%= @input.paid_in_capital %>">
+  </div>
+
+  <div>
+    <label for="non_performing_loans_to_customers">
+      Non performing loans to customers
+    </label>
+
+    <input type="text" id="non_performing_loans_to_customers" name="non_performing_loans_to_customers" value="<%= @input.non_performing_loans_to_customers %>">
+  </div>
+
+  <div>
+    <label for="long_term_debt">
+      Long term debt
+    </label>
+
+    <input type="text" id="long_term_debt" name="long_term_debt" value="<%= @input.long_term_debt %>">
+  </div>
+
+  <div>
+    <label for="perished_inventory">
+      Perished inventory
+    </label>
+
+    <input type="text" id="perished_inventory" name="perished_inventory" value="<%= @input.perished_inventory %>">
+  </div>
+
+  <div>
+    <label for="customer_satisfaction">
+      Customer satisfaction
+    </label>
+
+    <input type="text" id="customer_satisfaction" name="customer_satisfaction" value="<%= @input.customer_satisfaction %>">
+  </div>
+
+  <div>
+    <label for="customers_acquired_last_month">
+      Customers acquired last month
+    </label>
+
+    <input type="text" id="customers_acquired_last_month" name="customers_acquired_last_month" value="<%= @input.customers_acquired_last_month %>">
+  </div>
+
+  <div>
+    <label for="total_customers">
+      Total customers
+    </label>
+
+    <input type="text" id="total_customers" name="total_customers" value="<%= @input.total_customers %>">
+  </div>
+
+  <div>
+    <label for="number_promotion_activities_last_month">
+      Number promotion activities last month
+    </label>
+
+    <input type="text" id="number_promotion_activities_last_month" name="number_promotion_activities_last_month" value="<%= @input.number_promotion_activities_last_month %>">
+  </div>
+
+  <div>
+    <label for="number_promotion_activities_next_month">
+      Number promotion activities next month
+    </label>
+
+    <input type="text" id="number_promotion_activities_next_month" name="number_promotion_activities_next_month" value="<%= @input.number_promotion_activities_next_month %>">
+  </div>
+
+  <div>
+    <label for="utilities_expenses">
+      Utilities expenses
+    </label>
+
+    <input type="text" id="utilities_expenses" name="utilities_expenses" value="<%= @input.utilities_expenses %>">
+  </div>
+
+  <div>
+    <label for="rent">
+      Rent
+    </label>
+
+    <input type="text" id="rent" name="rent" value="<%= @input.rent %>">
+  </div>
+
+  <div>
+    <label for="interest_expenses">
+      Interest expenses
+    </label>
+
+    <input type="text" id="interest_expenses" name="interest_expenses" value="<%= @input.interest_expenses %>">
+  </div>
+
+  <div>
+    <label for="taxes">
+      Taxes
+    </label>
+
+    <input type="text" id="taxes" name="taxes" value="<%= @input.taxes %>">
+  </div>
+
+  <div>
+    <label for="consulting_expenses">
+      Consulting expenses
+    </label>
+
+    <input type="text" id="consulting_expenses" name="consulting_expenses" value="<%= @input.consulting_expenses %>">
+  </div>
+
+  <div>
+    <label for="other_indirect_costs">
+      Other indirect costs
+    </label>
+
+    <input type="text" id="other_indirect_costs" name="other_indirect_costs" value="<%= @input.other_indirect_costs %>">
+  </div>
+
+  <div>
+    <label for="number_of_employees">
+      Number of employees
+    </label>
+
+    <input type="text" id="number_of_employees" name="number_of_employees" value="<%= @input.number_of_employees %>">
+  </div>
+
+  <div>
+    <label for="yearly_working_days">
+      Yearly working days
+    </label>
+
+    <input type="text" id="yearly_working_days" name="yearly_working_days" value="<%= @input.yearly_working_days %>">
+  </div>
+
+  <div>
+    <label for="monthly_contribution_margin">
+      Monthly contribution margin
+    </label>
+
+    <input type="text" id="monthly_contribution_margin" name="monthly_contribution_margin" value="<%= @input.monthly_contribution_margin %>">
+  </div>
+
+  <div>
+    <label for="last_month_deferred_revenues">
+      Last month deferred revenues
+    </label>
+
+    <input type="text" id="last_month_deferred_revenues" name="last_month_deferred_revenues" value="<%= @input.last_month_deferred_revenues %>">
+  </div>
+
+  <div>
+    <label for="last_month_total_revenues">
+      Last month total revenues
+    </label>
+
+    <input type="text" id="last_month_total_revenues" name="last_month_total_revenues" value="<%= @input.last_month_total_revenues %>">
+  </div>
+
+  <div>
+    <label for="total_deliveries">
+      Total deliveries
+    </label>
+
+    <input type="text" id="total_deliveries" name="total_deliveries" value="<%= @input.total_deliveries %>">
+  </div>
+
+  <div>
+    <label for="late_deliveries">
+      Late deliveries
+    </label>
+
+    <input type="text" id="late_deliveries" name="late_deliveries" value="<%= @input.late_deliveries %>">
+  </div>
+
+  <div>
+    <label for="non_compliant_deliveries">
+      Non compliant deliveries
+    </label>
+
+    <input type="text" id="non_compliant_deliveries" name="non_compliant_deliveries" value="<%= @input.non_compliant_deliveries %>">
+  </div>
+
+  <div>
+    <label for="monthly_employee_suggestions_received">
+      Monthly employee suggestions received
+    </label>
+
+    <input type="text" id="monthly_employee_suggestions_received" name="monthly_employee_suggestions_received" value="<%= @input.monthly_employee_suggestions_received %>">
+  </div>
+
+  <div>
+    <label for="monthly_revenues_new_products">
+      Monthly revenues new products
+    </label>
+
+    <input type="text" id="monthly_revenues_new_products" name="monthly_revenues_new_products" value="<%= @input.monthly_revenues_new_products %>">
+  </div>
+
+  <div>
+    <label for="monthly_education_hours_manager">
+      Monthly education hours manager
+    </label>
+
+    <input type="text" id="monthly_education_hours_manager" name="monthly_education_hours_manager" value="<%= @input.monthly_education_hours_manager %>">
+  </div>
+
+  <div>
+    <label for="monthly_education_hours_all_employees">
+      Monthly education hours all employees
+    </label>
+
+    <input type="text" id="monthly_education_hours_all_employees" name="monthly_education_hours_all_employees" value="<%= @input.monthly_education_hours_all_employees %>">
+  </div>
+
+  <div>
+    <label for="reference_period">
+      Reference period
+    </label>
+
+    <input type="text" id="reference_period" name="reference_period" value="<%= @input.reference_period %>">
+  </div>
+
+  <div>
+    <label for="date_of_entry">
+      Date of entry
+    </label>
+
+    <input type="text" id="date_of_entry" name="date_of_entry" value="<%= @input.date_of_entry %>">
+  </div>
+
+  <div>
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" value="<%= @input.user_id %>">
+  </div>
+
+  <button>
+    Create input
+  </button>
+</form>
+
+<hr>
+
+<a href="/inputs">
+  Go back
+</a>

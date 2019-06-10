@@ -1,0 +1,74 @@
+<h1>
+  Status list
+</h1>
+
+<a href="/new_status_form">
+  Add a new status
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Area of interest
+    </th>
+
+    <th>
+      Status
+    </th>
+
+    <th>
+      Action plan
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @statuses.each do |status| %>
+  <tr>
+    <td>
+      <%= status.id %>
+    </td>
+
+    <td>
+      <%= status.area_of_interest %>
+    </td>
+
+    <td>
+      <%= status.status %>
+    </td>
+
+    <td>
+      <%= status.action_plan %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(status.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(status.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/statuses/<%= status.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

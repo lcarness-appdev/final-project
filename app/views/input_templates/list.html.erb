@@ -1,0 +1,322 @@
+<h1>
+  Input list
+</h1>
+
+<a href="/new_input_form">
+  Add a new input
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Operating income
+    </th>
+
+    <th>
+      Revenues
+    </th>
+
+    <th>
+      Invested capital
+    </th>
+
+    <th>
+      Total assets
+    </th>
+
+    <th>
+      Paid in capital
+    </th>
+
+    <th>
+      Non performing loans to customers
+    </th>
+
+    <th>
+      Long term debt
+    </th>
+
+    <th>
+      Perished inventory
+    </th>
+
+    <th>
+      Customer satisfaction
+    </th>
+
+    <th>
+      Customers acquired last month
+    </th>
+
+    <th>
+      Total customers
+    </th>
+
+    <th>
+      Number promotion activities last month
+    </th>
+
+    <th>
+      Number promotion activities next month
+    </th>
+
+    <th>
+      Utilities expenses
+    </th>
+
+    <th>
+      Rent
+    </th>
+
+    <th>
+      Interest expenses
+    </th>
+
+    <th>
+      Taxes
+    </th>
+
+    <th>
+      Consulting expenses
+    </th>
+
+    <th>
+      Other indirect costs
+    </th>
+
+    <th>
+      Number of employees
+    </th>
+
+    <th>
+      Yearly working days
+    </th>
+
+    <th>
+      Monthly contribution margin
+    </th>
+
+    <th>
+      Last month deferred revenues
+    </th>
+
+    <th>
+      Last month total revenues
+    </th>
+
+    <th>
+      Total deliveries
+    </th>
+
+    <th>
+      Late deliveries
+    </th>
+
+    <th>
+      Non compliant deliveries
+    </th>
+
+    <th>
+      Monthly employee suggestions received
+    </th>
+
+    <th>
+      Monthly revenues new products
+    </th>
+
+    <th>
+      Monthly education hours manager
+    </th>
+
+    <th>
+      Monthly education hours all employees
+    </th>
+
+    <th>
+      Reference period
+    </th>
+
+    <th>
+      Date of entry
+    </th>
+
+    <th>
+      User
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @inputs.each do |input| %>
+  <tr>
+    <td>
+      <%= input.id %>
+    </td>
+
+    <td>
+      <%= input.operating_income %>
+    </td>
+
+    <td>
+      <%= input.revenues %>
+    </td>
+
+    <td>
+      <%= input.invested_capital %>
+    </td>
+
+    <td>
+      <%= input.total_assets %>
+    </td>
+
+    <td>
+      <%= input.paid_in_capital %>
+    </td>
+
+    <td>
+      <%= input.non_performing_loans_to_customers %>
+    </td>
+
+    <td>
+      <%= input.long_term_debt %>
+    </td>
+
+    <td>
+      <%= input.perished_inventory %>
+    </td>
+
+    <td>
+      <%= input.customer_satisfaction %>
+    </td>
+
+    <td>
+      <%= input.customers_acquired_last_month %>
+    </td>
+
+    <td>
+      <%= input.total_customers %>
+    </td>
+
+    <td>
+      <%= input.number_promotion_activities_last_month %>
+    </td>
+
+    <td>
+      <%= input.number_promotion_activities_next_month %>
+    </td>
+
+    <td>
+      <%= input.utilities_expenses %>
+    </td>
+
+    <td>
+      <%= input.rent %>
+    </td>
+
+    <td>
+      <%= input.interest_expenses %>
+    </td>
+
+    <td>
+      <%= input.taxes %>
+    </td>
+
+    <td>
+      <%= input.consulting_expenses %>
+    </td>
+
+    <td>
+      <%= input.other_indirect_costs %>
+    </td>
+
+    <td>
+      <%= input.number_of_employees %>
+    </td>
+
+    <td>
+      <%= input.yearly_working_days %>
+    </td>
+
+    <td>
+      <%= input.monthly_contribution_margin %>
+    </td>
+
+    <td>
+      <%= input.last_month_deferred_revenues %>
+    </td>
+
+    <td>
+      <%= input.last_month_total_revenues %>
+    </td>
+
+    <td>
+      <%= input.total_deliveries %>
+    </td>
+
+    <td>
+      <%= input.late_deliveries %>
+    </td>
+
+    <td>
+      <%= input.non_compliant_deliveries %>
+    </td>
+
+    <td>
+      <%= input.monthly_employee_suggestions_received %>
+    </td>
+
+    <td>
+      <%= input.monthly_revenues_new_products %>
+    </td>
+
+    <td>
+      <%= input.monthly_education_hours_manager %>
+    </td>
+
+    <td>
+      <%= input.monthly_education_hours_all_employees %>
+    </td>
+
+    <td>
+      <%= input.reference_period %>
+    </td>
+
+    <td>
+      <%= input.date_of_entry %>
+    </td>
+
+    <td>
+      <%= input.user_id %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(input.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(input.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/inputs/<%= input.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

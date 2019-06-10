@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221161615) do
+ActiveRecord::Schema.define(version: 20190610053228) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -41,6 +41,78 @@ ActiveRecord::Schema.define(version: 20180221161615) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "inputs", force: :cascade do |t|
+    t.float "operating_income"
+    t.float "revenues"
+    t.float "invested_capital"
+    t.float "total_assets"
+    t.float "paid_in_capital"
+    t.float "non_performing_loans_to_customers"
+    t.float "long_term_debt"
+    t.float "perished_inventory"
+    t.integer "customer_satisfaction"
+    t.integer "customers_acquired_last_month"
+    t.integer "total_customers"
+    t.integer "number_promotion_activities_last_month"
+    t.integer "number_promotion_activities_next_month"
+    t.float "utilities_expenses"
+    t.float "rent"
+    t.float "interest_expenses"
+    t.float "taxes"
+    t.float "consulting_expenses"
+    t.float "other_indirect_costs"
+    t.integer "number_of_employees"
+    t.integer "yearly_working_days"
+    t.float "monthly_contribution_margin"
+    t.float "last_month_deferred_revenues"
+    t.float "last_month_total_revenues"
+    t.integer "total_deliveries"
+    t.integer "late_deliveries"
+    t.integer "non_compliant_deliveries"
+    t.integer "monthly_employee_suggestions_received"
+    t.float "monthly_revenues_new_products"
+    t.float "monthly_education_hours_manager"
+    t.float "monthly_education_hours_all_employees"
+    t.string "reference_period"
+    t.datetime "date_of_entry"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "notes"
+    t.integer "inputs_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "area_of_interest"
+    t.text "status"
+    t.text "action_plan"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "first_name"
+    t.text "last_name"
+    t.string "address"
+    t.string "industry"
+    t.integer "year_of_incorporation"
+    t.integer "number_of_employees"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
