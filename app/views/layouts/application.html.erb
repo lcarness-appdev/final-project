@@ -35,8 +35,13 @@
 
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-outline-primary bg-outline-primary"> 
-  <a class="navbar-brand" href="#">Financial Control Dashboard</a>
+    <% if current_user.blank? %>
+      <div></div>
+      <% else %>
+    <nav class="navbar navbar-expand-lg navbar-outline-secondary bg-outline-secondary"> 
+  <a class="navbar-brand" href="/">
+    <div><img src="http://www.carnessaleconsulting.it/images/logo_cc_new.gif" width="250" height="80" class="d-inline-block align-top" alt=""></div>
+    <div>    Financial Control Dashboard</div></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -68,6 +73,10 @@
     </ul>
   </div>
 </nav>
+      <% end %>
+
+
+
 
     <!-- ↓↓↓ Your view templates all get plugged in below ↓↓↓ -->
     <%= yield %>
@@ -75,16 +84,19 @@
     
     
     <% if current_user.blank? %>
-      <div class="pagination justify-content-center">
-        <a class="btn btn-outline-success btn-lg" href="/users/sign_in" role="button">Sign In</a>
+      <div class="pb-4 pagination justify-content-center">
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
         <a class="btn btn-outline-info btn-lg" href="/users/sign_up" role="button">Sign Up</a>
+      <% else %>
+        <a class="btn btn-outline-success btn-lg" href="/users/sign_in" role="button">Sign In</a>
+      <% end %>
       </div>
     <% else %>
       <div>
       <div class="pb-4 pagination justify-content-center">
         <a class="btn btn-outline-info btn-lg" href="/users/edit" role="button">Edit Profile</a>
-        <a class="btn btn-outline-primary btn-lg" href="/new_input_form" role="button">Input Updated Data</a>
-        <a class="btn btn-outline-secondary btn-lg" href="/users/sign_out" data-method="delete" role="button">Sign Out</a>
+        <a class="ml-4 btn btn-outline-primary btn-lg" href="/new_input_form" role="button">Input Updated Data</a>
+        <a class="ml-4 btn btn-outline-secondary btn-lg" href="/users/sign_out" data-method="delete" role="button">Sign Out</a>
       </div>
     <% end %>
     

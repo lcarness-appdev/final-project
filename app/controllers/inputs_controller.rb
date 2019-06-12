@@ -130,22 +130,27 @@ class InputsController < ApplicationController
   # Others:
   
   def home
+    @input = current_user.inputs.first
     render("input_templates/home.html.erb")
   end
   
   def customers
+    @input = current_user.inputs.first
     render("input_templates/customers.html.erb")
   end
   
   def financials
+    @input = current_user.inputs.first
     render("input_templates/financials.html.erb")
   end
   
   def processes
+    @input = current_user.inputs.first
     render("input_templates/processes.html.erb")
   end
   
   def educationinnovation
+    @input = current_user.inputs.first
     render("input_templates/educationinnovation.html.erb")
   end
   
