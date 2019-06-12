@@ -124,4 +124,25 @@ class InputsController < ApplicationController
 
     redirect_to("/inputs", { :notice => "Input deleted successfully." })
   end
+  
+  #------------------------------
+
+  # Others:
+  
+  def customers
+    render("input_templates/customers.html.erb")
+  end
+  
+  def financials
+    render("input_templates/financials.html.erb")
+  end
+  
+  def processes
+    render("input_templates/processes.html.erb")
+  end
+  
+  def educationinnovation
+    render("input_templates/educationinnovation.html.erb")
+  end
+  
 end

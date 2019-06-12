@@ -56,6 +56,15 @@ Rails.application.routes.draw do
 
   #------------------------------
 
+  # Other Routes:
+  match("/customers", { :controller => "inputs", :action => "customers", :via => "get" })
+  match("/financials", { :controller => "inputs", :action => "financials", :via => "get" })
+  match("/processes", { :controller => "inputs", :action => "processes", :via => "get" })
+  match("/educationinnovation", { :controller => "inputs", :action => "educationinnovation", :via => "get" })
+
+  
+  #------------------------------
+  
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -203,7 +203,15 @@
             <%= f.label :industry %>
 
             <%= f.text_field :industry, :class => industry_class, :placeholder => "Enter industry" %>
-
+            
+            <select id="industry_dropdown" name="industry_id">
+              <% Industry.all.each do |industry| %>
+                <option value="<%= industry.id %>">
+                  <%= industry.name %>
+                </option>
+              <% end %>
+            </select>             
+            
             <% if industry_was_invalid %>
               <% resource.errors.full_messages_for(:industry).each do |message| %>
                 <div class="invalid-feedback d-flex">
