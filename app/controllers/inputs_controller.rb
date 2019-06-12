@@ -129,6 +129,10 @@ class InputsController < ApplicationController
 
   # Others:
   
+  def home
+    render("input_templates/home.html.erb")
+  end
+  
   def customers
     render("input_templates/customers.html.erb")
   end

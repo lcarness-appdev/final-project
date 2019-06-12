@@ -186,6 +186,90 @@
           </div>
           <!-- Devise Input for address end -->
           
+          <!-- Devise Input for city start -->
+          <div class="form-group">
+            <% city_was_invalid = resource.errors.include?(:city) %>
+
+            <% city_class = "form-control" %>
+
+            <% if was_validated %>
+              <% if city_was_invalid %>
+                <% city_class << " is-invalid" %>
+              <% else %>
+                <% city_class << " is-valid" %>
+              <% end %>
+            <% end %>
+
+            <%= f.label :city %>
+
+            <%= f.text_field :city, :class => city_class, :placeholder => "Enter city" %>
+
+            <% if city_was_invalid %>
+              <% resource.errors.full_messages_for(:city).each do |message| %>
+                <div class="invalid-feedback d-flex">
+                  <%= message %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <!-- Devise Input for city end -->
+          
+          <!-- Devise Input for region start -->
+          <div class="form-group">
+            <% region_was_invalid = resource.errors.include?(:region) %>
+
+            <% region_class = "form-control" %>
+
+            <% if was_validated %>
+              <% if region_was_invalid %>
+                <% region_class << " is-invalid" %>
+              <% else %>
+                <% region_class << " is-valid" %>
+              <% end %>
+            <% end %>
+
+            <%= f.label :region %>
+
+            <%= f.text_field :region, :class => region_class, :placeholder => "Enter region" %>
+
+            <% if region_was_invalid %>
+              <% resource.errors.full_messages_for(:region).each do |message| %>
+                <div class="invalid-feedback d-flex">
+                  <%= message %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <!-- Devise Input for region end -->    
+
+          <!-- Devise Input for country start -->
+          <div class="form-group">
+            <% country_was_invalid = resource.errors.include?(:country) %>
+
+            <% country_class = "form-control" %>
+
+            <% if was_validated %>
+              <% if country_was_invalid %>
+                <% country_class << " is-invalid" %>
+              <% else %>
+                <% country_class << " is-valid" %>
+              <% end %>
+            <% end %>
+
+            <%= f.label :country %>
+
+            <%= f.select :country, Country.order(:country).pluck(:country), :class => country_class%>
+            
+            <% if country_was_invalid %>
+              <% resource.errors.full_messages_for(:country).each do |message| %>
+                <div class="invalid-feedback d-flex">
+                  <%= message %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <!-- Devise Input for country end -->      
+          
           <!-- Devise Input for industry start -->
           <div class="form-group">
             <% industry_was_invalid = resource.errors.include?(:industry) %>
@@ -202,15 +286,7 @@
 
             <%= f.label :industry %>
 
-            <%= f.text_field :industry, :class => industry_class, :placeholder => "Enter industry" %>
-            
-            <select id="industry_dropdown" name="industry_id">
-              <% Industry.all.each do |industry| %>
-                <option value="<%= industry.id %>">
-                  <%= industry.name %>
-                </option>
-              <% end %>
-            </select>             
+            <%= f.select :industry, Industry.order(:name).pluck(:name), :class => industry_class%>
             
             <% if industry_was_invalid %>
               <% resource.errors.full_messages_for(:industry).each do |message| %>

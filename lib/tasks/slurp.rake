@@ -13,7 +13,7 @@ namespace :slurp do
       puts "#{t.name} saved"
     end
 
-  puts "There are now #{Industry.count} rows in the indutry table"
+  puts "There are now #{Industry.count} rows in the industry table"
     
   end
 

@@ -16,6 +16,12 @@
 #  number_of_employees    :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  city                   :string
+#  region                 :string
+#  country                :string
+#  lat                    :float
+#  lon                    :float
+#  color                  :string
 #
 # Indexes
 #
