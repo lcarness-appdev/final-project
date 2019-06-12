@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+  
+  
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -52,10 +56,11 @@
             
             <% if @input.blank? %>
 
-            <div class="card border-dark" style="width: 48rem; height: 10rem;">
-  <div class="card-body text-">
-    <h5 class="card-title text-success">Your firm is doing great</h5>
-    <p class="card-text">Based on this area, your firm is healthy. We encourage you to keep going with your great work and do the next check in 3 months.</p>
+            <div class="card border-dark mb-3" style="width: 48rem; height: 10rem;">
+  <div class="card-body text-dark">
+    <h5 class="card-title text-dark">Welcome!</h5>
+    <p class="card-text">This is the first time you visit the dashboard. To get started and check the status of your firm, 
+    you need to input the most recent data of the business. Please click the button "Input Updated Data" below.</p>
   </div>
 </div>
             <% else %>
@@ -85,3 +90,5 @@
         </div>
     
 </div>
+
+</html>
