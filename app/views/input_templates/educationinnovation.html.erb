@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        
+        <div class="card text-white text-center bg-success mb-3" style="width: 24rem; height: 12rem;">
+  <div class="card-header">Successful Check</div>
+  <div class="card-body">
+    <i class="fas fa-thumbs-up fa-5x"></i>
+  </div>
+</div>
+
+<div class="card text-white text-center bg-warning mb-3" style="width: 24rem; height: 12rem;">
+  <div class="card-header">Uncertain Results</div>
+  <div class="card-body">
+    <i class="fas fa-question-circle fa-5x"></i>
+  </div>
+</div>
+
+<div class="card text-white text-center bg-danger mb-3" style="width: 24rem; height: 12rem;">
+  <div class="card-header">Emergency</div>
+  <div class="card-body">
+    <i class="fas fa-exclamation fa-5x"></i>
+  </div>
+</div>
+        
+    </div>
+        
+        <div class="col-md-6">
+            
+            <div class="card border-success mb-3" style="width: 24rem; height: 12rem;">
+  <div class="card-body text-success">
+    <h5 class="card-title text-success">Your firm is doing great</h5>
+    <p class="card-text">Based on this area, your firm is healthy. We encourage you to keep going with your great work and do the next check in 3 months.</p>
+  </div>
+</div>
+
+<div class="card border-warning mb-3" style="width: 24rem; height: 12rem;">
+  <div class="card-body text-warning">
+    <h5 class="card-title text-warning">Need to monitor</h5>
+    <p class="card-text">Based on this area, there is potential to improve some metrics. You should monitor their evolution on a monthly basis to avoid things getting worse.</p>
+  </div>
+</div>
+
+<div class="card border-danger mb-3" style="width: 24rem; height: 12rem;">
+  <div class="card-body text-danger">
+    <h5 class="card-title text-danger">Take action immediately</h5>
+    <p class="card-text">Based on this area, your firm is not healthy. We encourage you to perform a detailed review of what is going on, with the help of your private auditor, to identify corrective actions.</p>
+  </div>
+</div>
+            
+        </div>
+        
+        <div class="col-12">
+<table>
+  <tr>
+    <th>LM Suggestions Received</th>
+    <th>LM Revenues New Products</th>
+    <th>LM Education Hrs Manager</th>
+    <th>LM Education Hrs All Employees</th>
+    <th>Date</th>
+  </tr>
+
+  <% current_user.inputs.order({ :created_at => :asc }).each do |input| %>
+  <tr>
+    <td>
+      <%= input.monthly_employee_suggestions_received %>
+    </td>
+
+    <td>
+      <%= input.monthly_revenues_new_products %>
+    </td>
+
+    <td>
+      <%= input.monthly_education_hours_manager %>
+    </td>
+    
+    <td>
+      <%= input.monthly_education_hours_all_employees %>
+    </td>
+    
+    <td>
+      <%= input.created_at %>
+    </td>
+    
+  </tr>
+  <% end %>
+</table>                    
+            
+        </div>
+    </div>
+</div>
+
