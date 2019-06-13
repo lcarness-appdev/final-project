@@ -1,10 +1,8 @@
 <div class="pagination justify-content-center" >
   <h2>
-  Add most recent figures for your firm 
-</h2>
+    Add most recent figures for your firm 
+  </h2>
 </div>
-
-
 
 <hr>
 
@@ -14,45 +12,40 @@
   
   <div class="container">
     <div class="row">
-        
-        <div class="col-12">
-        
-          <div class="card">
-            <h5 class="card-header"><i class="fas fa-users"></i>  Customers</h5>
+      <div class="col-12">
+        <div class="card">
+          <h5 class="card-header"><i class="fas fa-users"></i>  Customers</h5>
             <div class="card-body">
               
               <div class="row">
-                
                 <div class="col">
-                <label for="customer_satisfaction">
-                  Customer satisfaction
-                </label>
-                <select id="customer_satisfaction" name="customer_satisfaction" value="<%= @input.customer_satisfaction %>">
+                  <label for="customer_satisfaction">
+                    Customer satisfaction
+                  </label>
+                  <select id="customer_satisfaction" name="customer_satisfaction" value="<%= @input.customer_satisfaction %>">
                   <% 1.step(100,1) do |number| %>
                     <option>
                     <%= number %>
                     </option>
                   <% end %>
-                </select>
+                  </select>
                 </div>
               </div>
               
               
               <div class="row">
-              
-              <div class="col">
-              <label for="customers_acquired_last_month">
-                  Customers acquired last month
-                </label>
-                <input type="text" id="customers_acquired_last_month" name="customers_acquired_last_month" placeholder="Enter Integer" value="<%= @input.customers_acquired_last_month %>">
-              </div>
-
-              <div class="col">
-                <label for="total_customers">
-                  Total customers
-                </label>
-                <input type="text" id="total_customers" name="total_customers"placeholder="Enter Integer" value="<%= @input.total_customers %>">
-              </div>
+                <div class="col">
+                  <label for="customers_acquired_last_month">
+                    Customers acquired last month
+                  </label>
+                  <input type="text" id="customers_acquired_last_month" name="customers_acquired_last_month" placeholder="Enter Integer" value="<%= @input.customers_acquired_last_month %>">
+                </div>
+                <div class="col">
+                  <label for="total_customers">
+                    Total customers
+                  </label>
+                  <input type="text" id="total_customers" name="total_customers"placeholder="Enter Integer" value="<%= @input.total_customers %>">
+                </div>
               </div>
             
             
@@ -220,7 +213,7 @@
       Number of employees
     </label>
 
-    <input type="text" id="number_of_employees" name="number_of_employees" value="<%= @input.number_of_employees %>">                  
+    <input type="text" id="number_of_employees" name="number_of_employees" placeholder="<%= current_user.number_of_employees %> (change by editing profile)" readonly>                  
                 </div>
                 <div class="col">
     <label for="yearly_working_days">
@@ -241,7 +234,11 @@
             </div>
             
             <div class="col">
-                  
+    <label for="total_deliveries">
+      Total deliveries
+    </label>
+
+    <input type="text" id="total_deliveries" name="total_deliveries" placeholder="Enter Integer" value="<%= @input.total_deliveries %>">                  
             </div>
           </div>
           
@@ -341,10 +338,25 @@
                     <label for="date_of_entry">
                     Date of entry
                     </label>
-                  <input type="text" id="date_of_entry" name="date_of_entry" value="<%= @input.date_of_entry %>">   
+                  <input type="text" id="date_of_entry" name="date_of_entry" placeholder="<%= Time.now.strftime("%B %d, %Y") %>" readonly>   
+                  </div>
+                  <div class="col">
+                    <label for="reference_period">
+                    Reference Period
+                    </label>
+                  <input type="text" id="reference_period" name="reference_period" value="<%= @input.reference_period %>">   
                   </div>
                
                 </div>
+              
+                <div class="row">
+                  <div class="col">
+                    <label for="user_id">
+                    User
+                    </label>
+                  <input type="text" id="user_id" name="user_id" placeholder="<%= current_user.last_name %>" readonly>   
+                  </div>
+              
               
               
               </div>
@@ -354,7 +366,10 @@
 </div>
 
 <div class="pt-4 pagination justify-content-center">
-<button type="button" class="btn btn-primary">Input Updated Data</button>
+  <button class="btn btn-primary">
+    Input Updated Data
+  </button>
+
 </div>
 </form>
 

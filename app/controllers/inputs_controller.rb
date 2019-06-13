@@ -39,7 +39,7 @@ class InputsController < ApplicationController
     @input.taxes = params.fetch("taxes")
     @input.consulting_expenses = params.fetch("consulting_expenses")
     @input.other_indirect_costs = params.fetch("other_indirect_costs")
-    @input.number_of_employees = params.fetch("number_of_employees")
+    @input.number_of_employees = current_user.number_of_employees
     @input.yearly_working_days = params.fetch("yearly_working_days")
     @input.monthly_contribution_margin = params.fetch("monthly_contribution_margin")
     @input.last_month_deferred_revenues = params.fetch("last_month_deferred_revenues")
@@ -52,8 +52,8 @@ class InputsController < ApplicationController
     @input.monthly_education_hours_manager = params.fetch("monthly_education_hours_manager")
     @input.monthly_education_hours_all_employees = params.fetch("monthly_education_hours_all_employees")
     @input.reference_period = params.fetch("reference_period")
-    @input.date_of_entry = params.fetch("date_of_entry")
-    @input.user_id = params.fetch("user_id")
+    @input.date_of_entry = Time.now.strftime("%B %d, %Y")
+    @input.user_id = current_user.id
 
     if @input.valid?
       @input.save
@@ -92,7 +92,7 @@ class InputsController < ApplicationController
     @input.taxes = params.fetch("taxes")
     @input.consulting_expenses = params.fetch("consulting_expenses")
     @input.other_indirect_costs = params.fetch("other_indirect_costs")
-    @input.number_of_employees = params.fetch("number_of_employees")
+    @input.number_of_employees = current_user.number_of_employees
     @input.yearly_working_days = params.fetch("yearly_working_days")
     @input.monthly_contribution_margin = params.fetch("monthly_contribution_margin")
     @input.last_month_deferred_revenues = params.fetch("last_month_deferred_revenues")
@@ -105,8 +105,8 @@ class InputsController < ApplicationController
     @input.monthly_education_hours_manager = params.fetch("monthly_education_hours_manager")
     @input.monthly_education_hours_all_employees = params.fetch("monthly_education_hours_all_employees")
     @input.reference_period = params.fetch("reference_period")
-    @input.date_of_entry = params.fetch("date_of_entry")
-    @input.user_id = params.fetch("user_id")
+    @input.date_of_entry = Time.now.strftime("%B %d, %Y")
+    @input.user_id = current_user.id
 
     if @input.valid?
       @input.save
