@@ -297,11 +297,11 @@
     </td>
 
     <td>
-      <%= input.date_of_entry %>
+      <%= input.date_of_entry.strftime("%B %d, %Y") %>
     </td>
 
     <td>
-      <%= input.user_id %>
+      <%= input.user.last_name %>
     </td>
 
     <td>

@@ -1,29 +1,24 @@
-
 <hr>
 
 <%= render("note_templates/validation_failures.html.erb") %>
 
 <h3>Add a new note to your data</h3>
   <form action="/insert_note_record" method="post">
-    <div>
     <label for="notes">
       Notes
     </label>
     <textarea type="text" id="notes" name="notes" placeholder="Enter a note..."></textarea>
-    </div>
     
-    <div>
-    <label for="inputs_id">
+    <label for="inputs_identifier">
       Inputs
     </label>
-    <select id="inputs_id" name="inputs_id">
+    <select id="inputs_identifier" name="inputs_id">
       <% current_user.inputs.each do |input| %>
-        <option value="<% input.id %>">
+        <option value="<%= input.id %>">
           <%= input.date_of_entry.strftime("%B %d, %Y") %>, Input n.<%= input.id %>
         </option>
       <% end %>
     </select>  
-    </div>  
 
 <div class="pt-4 pagination justify-content-center">
   <button class="btn btn-primary">
