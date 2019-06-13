@@ -128,9 +128,30 @@ class InputsController < ApplicationController
   #------------------------------
 
   # Others:
-  
+
+  def address_to_geo(address)
+    require ("open-uri")
+    url = 'https://maps.googleapis.com/maps/api/geocode/json?address='+URI.encode(address)+"&key=AIzaSyDG142kyL1Bm0U85niUsn1cSOMZu8TS4Cs"
+    results = JSON.parse(open(url).read).fetch("results")
+    location = results.first["geometry"]
+    location = location["location"]
+    lat = location["lat"]
+    lng = location["lng"]
+    return [lat,lng]
+  end
+
   def home
     @input = current_user.inputs.first
+    @address = current_user.address
+    @city = current_user.city
+    @region = current_user.region
+    @country = current_user.country
+    @color = ["blue", "red", "purple", "yellow", "green"].sample
+
+    latlng = address_to_geo(@address.to_s + @city.to_s + @region.to_s + @country.to_s)
+    @lat = latlng[0]
+    @lng = latlng[1]
+    
     render("input_templates/home.html.erb")
   end
   
