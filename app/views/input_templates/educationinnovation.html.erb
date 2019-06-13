@@ -10,7 +10,7 @@
   </div>
 </div>
         
-        <% elsif @input.customer_satisfaction>70 && (@input.customers_acquired_last_month/@input.total_customers)>(10%) && @input.number_promotion_activities_next_month>(@input.number_promotion_activities_last_month)%>
+        <% elsif (@input.monthly_employee_suggestions_received/@input.number_of_employees)>=0.3 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)>=0.1 && ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)>1 %>
         
         <div class="card text-white text-center bg-success mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-header">Successful Check</div>
@@ -19,7 +19,7 @@
   </div>
 </div>
 
-  <% elsif @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<(5%) && @input.number_promotion_activities_next_month<(@input.number_promotion_activities_last_month-10) %>
+        <% elsif (@input.monthly_employee_suggestions_received/@input.number_of_employees)<=0.1 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)<0.05 && ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)<0.5 %>
 
 <div class="card text-white text-center bg-danger mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-header">Emergency</div>
@@ -39,9 +39,6 @@
 
   <% end %>
 
-
-        
-        <% end %>
         
     </div>
         
@@ -57,7 +54,7 @@
               </div>
             </div>
             
-          <% elsif @input.customer_satisfaction>70 && (@input.customers_acquired_last_month/@input.total_customers)>(10%) && @input.number_promotion_activities_next_month>(@input.number_promotion_activities_last_month)%>
+        <% elsif (@input.monthly_employee_suggestions_received/@input.number_of_employees)>=0.3 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)>=0.1 && ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)>1 %>
           
             <div class="card border-success mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-body text-success">
@@ -66,7 +63,7 @@
   </div>
 </div>
 
-  <% elsif @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<(5%) && @input.number_promotion_activities_next_month<(@input.number_promotion_activities_last_month-10) %>
+        <% elsif (@input.monthly_employee_suggestions_received/@input.number_of_employees)<=0.1 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)<0.05 && ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)<0.5 %>
 
 <div class="card border-danger mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-body text-danger">
@@ -86,8 +83,6 @@
 
 
   <% end %>
-
-            <% end %>
             
         </div>
         
@@ -120,7 +115,7 @@
     </td>
     
     <td>
-      <%= input.created_at %>
+      <%= input.created_at.strftime("%B %d, %Y") %>
     </td>
     
   </tr>

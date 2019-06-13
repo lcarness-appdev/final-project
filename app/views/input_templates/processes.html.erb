@@ -10,7 +10,8 @@
   </div>
 </div>
         
-        <% elsif @input.customer_satisfaction>70 && (@input.customers_acquired_last_month/@input.total_customers)>(10%) && @input.number_promotion_activities_next_month>(@input.number_promotion_activities_last_month)%>
+        <% elsif ((@input.interest_expenses+@input.taxes)/@input.operating_income)<0.6 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)<=0.2 &&
+        ((@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)<0.2 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)<0.4 %>
         
         <div class="card text-white text-center bg-success mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-header">Successful Check</div>
@@ -19,7 +20,8 @@
   </div>
 </div>
 
-  <% elsif @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<(5%) && @input.number_promotion_activities_next_month<(@input.number_promotion_activities_last_month-10) %>
+        <% elsif ((@input.interest_expenses+@input.taxes)/@input.operating_income)>0.8 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)>0.4 &&
+        ((@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)>0.5 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)>0.6 %>
 
 <div class="card text-white text-center bg-danger mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-header">Emergency</div>
@@ -39,9 +41,6 @@
 
   <% end %>
 
-
-        
-        <% end %>
         
     </div>
         
@@ -57,7 +56,8 @@
               </div>
             </div>
             
-          <% elsif @input.customer_satisfaction>70 && (@input.customers_acquired_last_month/@input.total_customers)>(10%) && @input.number_promotion_activities_next_month>(@input.number_promotion_activities_last_month)%>
+        <% elsif ((@input.interest_expenses+@input.taxes)/@input.operating_income)<0.6 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)<=0.2 &&
+        ((@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)<0.2 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)<0.4 %>
           
             <div class="card border-success mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-body text-success">
@@ -66,7 +66,8 @@
   </div>
 </div>
 
-  <% elsif @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<(5%) && @input.number_promotion_activities_next_month<(@input.number_promotion_activities_last_month-10) %>
+        <% elsif ((@input.interest_expenses+@input.taxes)/@input.operating_income)>0.8 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)>0.4 &&
+        ((@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)>0.5 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)>0.6 %>
 
 <div class="card border-danger mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-body text-danger">
@@ -86,10 +87,9 @@
 
 
   <% end %>
-
-            <% end %>
             
         </div>
+        
         <div class="col-12">
 <table>
   <tr>
@@ -134,7 +134,7 @@
     </td>
     
     <td>
-      <%= input.created_at %>
+      <%= input.created_at.strftime("%B %d, %Y") %>
     </td>
     
   </tr>

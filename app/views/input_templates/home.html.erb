@@ -60,30 +60,48 @@
   </div>
 </div>
       
+        <% elsif (( @input.customer_satisfaction>70 && (@input.customers_acquired_last_month/@input.total_customers)>=0.5 && @input.number_promotion_activities_next_month>@input.number_promotion_activities_last_month ) ||
+        ( (@input.operating_income/@input.revenues)>0.3 && (@input.long_term_debt/@input.invested_capital)<=0.5 && (@input.non_performing_loans_to_customers/@input.invested_capital)<0.1 && (@input.perished_inventory/@input.invested_capital)<0.1 )) &&
+        ( ((@input.interest_expenses+@input.taxes)/@input.operating_income)<0.6 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)<=0.2 &&
+        (( (@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)<0.2 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)<0.4 ) ||
+        ( (@input.monthly_employee_suggestions_received/@input.number_of_employees)>=0.3 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)>=0.1 &&
+        ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)>1 )) %>
       
-      <% else %>
-        
         
         <div class="card text-white text-center bg-success mb-3" style="width: 24rem; height: 12rem;">
-  <div class="card-header">Successful Check</div>
+  <div class="card-header font-weight-bolder">Successful Check</div>
   <div class="card-body">
     <i class="fas fa-thumbs-up fa-5x"></i>
   </div>
 </div>
 
+
+        <% elsif (( @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<0.1 && @input.number_promotion_activities_next_month<=(@input.number_promotion_activities_last_month) )  ||
+        ( (@input.operating_income/@input.revenues)<0.1 && (@input.long_term_debt/@input.invested_capital)>0.75 && (@input.non_performing_loans_to_customers/@input.invested_capital)>0.15 && (@input.perished_inventory/@input.invested_capital)>0.15 )) &&
+        ( ((@input.interest_expenses+@input.taxes)/@input.operating_income)>0.8 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)>0.4 &&
+        ( ((@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)>0.5 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)>0.6 ) ||
+        ( (@input.monthly_employee_suggestions_received/@input.number_of_employees)<=0.1 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)<0.05 &&
+        ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)<0.5 )) %>
+
+
+<div class="card text-white text-center bg-danger mb-3" style="width: 24rem; height: 12rem;">
+  <div class="card-header font-weight-bolder">Emergency</div>
+  <div class="card-body">
+    <i class="fas fa-exclamation fa-5x"></i>
+  </div>
+</div>
+
+
+
+    <% else %>
+
 <div class="card text-white text-center bg-warning mb-3" style="width: 24rem; height: 12rem;">
-  <div class="card-header">Uncertain Results</div>
+  <div class="card-header font-weight-bolder">Uncertain Results</div>
   <div class="card-body">
     <i class="fas fa-question-circle fa-5x"></i>
   </div>
 </div>
 
-<div class="card text-white text-center bg-danger mb-3" style="width: 24rem; height: 12rem;">
-  <div class="card-header">Emergency</div>
-  <div class="card-body">
-    <i class="fas fa-exclamation fa-5x"></i>
-  </div>
-</div>
         
         
       <% end %>
@@ -103,28 +121,47 @@
     you need to input the most recent data of the business. Please click the button "Input Updated Data" below.</p>
   </div>
 </div>
-            <% else %>
+
+        <% elsif (( @input.customer_satisfaction>70 && (@input.customers_acquired_last_month/@input.total_customers)>=0.5 && @input.number_promotion_activities_next_month>@input.number_promotion_activities_last_month ) ||
+        ( (@input.operating_income/@input.revenues)>0.3 && (@input.long_term_debt/@input.invested_capital)<=0.5 && (@input.non_performing_loans_to_customers/@input.invested_capital)<0.1 && (@input.perished_inventory/@input.invested_capital)<0.1 )) &&
+        ( ((@input.interest_expenses+@input.taxes)/@input.operating_income)<0.6 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)<=0.2 &&
+        (( (@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)<0.2 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)<0.4 ) ||
+        ( (@input.monthly_employee_suggestions_received/@input.number_of_employees)>=0.3 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)>=0.1 &&
+        ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)>1 )) %>
+
             
             <div class="card border-success mb-3" style="width: 48rem; height: 10rem;">
   <div class="card-body text-success">
-    <h5 class="card-title text-success">Your firm is doing great</h5>
-    <p class="card-text">Based on this area, your firm is healthy. We encourage you to keep going with your great work and do the next check in 3 months.</p>
+    <h5 class="card-title text-success font-weight-bolder">Your firm is doing great</h5>
+    <p class="card-text font-italic">Your firm is doing great! Keep going with your great work!</p>
   </div>
 </div>
 
-<div class="card border-warning mb-3" style="width: 48rem; height: 10rem;">
-  <div class="card-body text-warning">
-    <h5 class="card-title text-warning">Need to monitor</h5>
-    <p class="card-text">Based on this area, there is potential to improve some metrics. You should monitor their evolution on a monthly basis to avoid things getting worse.</p>
-  </div>
-</div>
+
+        <% elsif (( @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<0.1 && @input.number_promotion_activities_next_month<=(@input.number_promotion_activities_last_month) )  ||
+        ( (@input.operating_income/@input.revenues)<0.1 && (@input.long_term_debt/@input.invested_capital)>0.75 && (@input.non_performing_loans_to_customers/@input.invested_capital)>0.15 && (@input.perished_inventory/@input.invested_capital)>0.15 )) &&
+        ( ((@input.interest_expenses+@input.taxes)/@input.operating_income)>0.8 && ((@input.utilities_expenses+@input.rent+@input.consulting_expenses+@input.other_indirect_costs)/@input.revenues)>0.4 &&
+        ( ((@input.late_deliveries+@input.non_compliant_deliveries)/@input.total_deliveries)>0.5 && (@input.last_month_deferred_revenues/@input.last_month_total_revenues)>0.6 ) ||
+        ( (@input.monthly_employee_suggestions_received/@input.number_of_employees)<=0.1 && (@input.monthly_revenues_new_products/@input.last_month_total_revenues)<0.05 &&
+        ((@input.monthly_education_hours_manager+(@input.monthly_education_hours_all_employees-@input.monthly_education_hours_manager))/@input.number_of_employees)<0.5 )) %>
+
 
 <div class="card border-danger mb-3" style="width: 48rem; height: 10rem;">
   <div class="card-body text-danger">
-    <h5 class="card-title text-danger">Take action immediately</h5>
-    <p class="card-text">Based on this area, your firm is not healthy. We encourage you to perform a detailed review of what is going on, with the help of your private auditor, to identify corrective actions.</p>
+    <h5 class="card-title text-danger font-weight-bolder">Take action immediately</h5>
+    <p class="card-text font-italic">You should act ASAP to identify corrective actions with the help of your auditor!</p>
   </div>
 </div>
+
+  <% else %>
+
+<div class="card border-warning mb-3" style="width: 48rem; height: 10rem;">
+  <div class="card-body text-warning">
+    <h5 class="card-title text-warning font-weight-bolder">Need to monitor</h5>
+    <p class="card-text font-italic">You can do better! You should monitor some metrics periodically and think about how to improve them. Explore the sub-areas to identify issues.</p>
+  </div>
+</div>
+
             <% end %>
             
         </div>

@@ -141,7 +141,7 @@ class InputsController < ApplicationController
   end
 
   def home
-    @input = current_user.inputs.first
+    @input = current_user.inputs.last
     @address = current_user.address
     @city = current_user.city
     @region = current_user.region
@@ -156,22 +156,22 @@ class InputsController < ApplicationController
   end
   
   def customers
-    @input = current_user.inputs.first
+    @input = current_user.inputs.last
     render("input_templates/customers.html.erb")
   end
   
   def financials
-    @input = current_user.inputs.first
+    @input = current_user.inputs.last
     render("input_templates/financials.html.erb")
   end
   
   def processes
-    @input = current_user.inputs.first
+    @input = current_user.inputs.last
     render("input_templates/processes.html.erb")
   end
   
   def educationinnovation
-    @input = current_user.inputs.first
+    @input = current_user.inputs.last
     render("input_templates/educationinnovation.html.erb")
   end
   

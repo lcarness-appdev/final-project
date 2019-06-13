@@ -10,7 +10,7 @@
   </div>
 </div>
         
-        <% elsif @input.customer_satisfaction>70 && @input.customers_acquired_last_month/@input.total_customers>10% && @input.number_promotion_activities_next_month>@input.number_promotion_activities_last_month %>
+        <% elsif (@input.operating_income/@input.revenues)>0.3 && (@input.long_term_debt/@input.invested_capital)<=0.5 && (@input.non_performing_loans_to_customers/@input.invested_capital)<0.1 && (@input.perished_inventory/@input.invested_capital)<0.1 %>
         
         <div class="card text-white text-center bg-success mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-header">Successful Check</div>
@@ -19,7 +19,7 @@
   </div>
 </div>
 
-  <% elsif @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<(5%) && @input.number_promotion_activities_next_month<(@input.number_promotion_activities_last_month-10) %>
+  <% elsif (@input.operating_income/@input.revenues)<0.1 && (@input.long_term_debt/@input.invested_capital)>0.75 && (@input.non_performing_loans_to_customers/@input.invested_capital)>0.15 && (@input.perished_inventory/@input.invested_capital)>0.15 %>
 
 <div class="card text-white text-center bg-danger mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-header">Emergency</div>
@@ -39,9 +39,6 @@
 
   <% end %>
 
-
-        
-        <% end %>
         
     </div>
         
@@ -57,7 +54,7 @@
               </div>
             </div>
             
-          <% elsif @input.customer_satisfaction>70 && (@input.customers_acquired_last_month/@input.total_customers)>(10%) && @input.number_promotion_activities_next_month>(@input.number_promotion_activities_last_month)%>
+        <% elsif (@input.operating_income/@input.revenues)>0.3 && (@input.long_term_debt/@input.invested_capital)<=0.5 && (@input.non_performing_loans_to_customers/@input.invested_capital)<0.1 && (@input.perished_inventory/@input.invested_capital)<0.1 %>
           
             <div class="card border-success mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-body text-success">
@@ -66,7 +63,7 @@
   </div>
 </div>
 
-  <% elsif @input.customer_satisfaction<50 && (@input.customers_acquired_last_month/@input.total_customers)<(5%) && @input.number_promotion_activities_next_month<(@input.number_promotion_activities_last_month-10) %>
+<% elsif (@input.operating_income/@input.revenues)<0.1 && (@input.long_term_debt/@input.invested_capital)>0.75 && (@input.non_performing_loans_to_customers/@input.invested_capital)>0.15 && (@input.perished_inventory/@input.invested_capital)>0.15 %>
 
 <div class="card border-danger mb-3" style="width: 24rem; height: 12rem;">
   <div class="card-body text-danger">
@@ -86,10 +83,9 @@
 
 
   <% end %>
-
-            <% end %>
             
         </div>
+        
         <div class="col-12">
        
 <table>
@@ -140,7 +136,7 @@
     </td>
     
     <td>
-      <%= input.created_at %>
+      <%= input.created_at.strftime("%B %d, %Y") %>
     </td>
     
   </tr>
