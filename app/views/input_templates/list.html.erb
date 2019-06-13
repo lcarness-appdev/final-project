@@ -162,7 +162,7 @@
     </th>
   </tr>
 
-  <% @inputs.each do |input| %>
+  <% current_user.inputs.order({ :created_at => :asc }).each do |input| %>
   <tr>
     <td>
       <%= input.id %>
