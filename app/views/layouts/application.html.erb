@@ -93,10 +93,12 @@
       </div>
     <% else %>
       <div>
-      <div class="pb-4 pagination justify-content-center">
-        <a class="btn btn-outline-info btn-lg" href="/users/edit" role="button">Edit Profile</a>
-        <a class="ml-4 btn btn-outline-primary btn-lg" href="/new_input_form" role="button">Input Updated Data</a>
-        <a class="ml-4 btn btn-outline-secondary btn-lg" href="/users/sign_out" data-method="delete" role="button">Sign Out</a>
+      <div class="pt-4 pb-6 pagination justify-content-center">
+        <a class="btn btn-outline-info" href="/users/edit" role="button">Edit Profile</a>
+        <a class="ml-2 btn btn-outline-info" href="/inputs" role="button">See History</a>
+        <a class="ml-2 btn btn-outline-primary" href="/new_input_form" role="button">Input Updated Data</a>
+        <a class="ml-2 btn btn-outline-primary" href="/new_note_form" role="button">Add Notes to your Data</a>
+        <a class="ml-2 btn btn-outline-secondary" href="/users/sign_out" data-method="delete" role="button">Sign Out</a>
       </div>
     <% end %>
     

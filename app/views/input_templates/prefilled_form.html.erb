@@ -8,6 +8,7 @@
 
 <form action="/update_input_record/<%= @input.id %>" method="post">
   
+  
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -336,7 +337,7 @@
                     <label for="date_of_entry">
                     Date of entry
                     </label>
-                  <input type="text" id="date_of_entry" name="date_of_entry" value="<%= Date.today %>">   
+                  <input type="text" id="date_of_entry" name="date_of_entry" placeholder="<%= Time.now.strftime("%B %d, %Y") %>" readonly>   
                   </div>
                   <div class="col">
                     <label for="reference_period">
@@ -352,7 +353,7 @@
                     <label for="user_id">
                     User
                     </label>
-                  <input type="text" id="user_id" name="user_id" value="<%= current_user.id %>">   
+                  <input type="text" id="user_id" name="user_id" placeholder="<%= current_user.last_name %>" readonly>   
                   </div>
               
               

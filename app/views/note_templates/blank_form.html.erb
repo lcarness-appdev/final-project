@@ -20,12 +20,19 @@
       Inputs
     </label>
 
-    <input type="text" id="inputs_id" name="inputs_id" value="<%= @note.inputs_id %>">
+    <select id="inputs_id" name="inputs_id" value="<%= @note.inputs_id %>">
+      <% current_user.inputs.each do |input| %>
+        <option>
+          <%= input.date_of_entry.strftime("%B %d, %Y") %>, Input n.<%= input.id %>
+        </option>
+      <% end %>
   </div>
 
-  <button>
+<div class="pt-4 pagination justify-content-center">
+  <button class="btn btn-primary">
     Create note
   </button>
+</div>
 </form>
 
 <hr>
